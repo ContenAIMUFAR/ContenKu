@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Tugasku INFTIK</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #222;
+    }
+
+    /* =========================
+       HALAMAN KODE RAHASIA
+    ========================= */
+
+    #halamanKode {
+      min-height: 100vh;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #32105f, #a044ff);
+    }
+
+    .kotak-kode {
+      width: 100%;
+      max-width: 430px;
+      padding: 35px 25px;
+      text-align: center;
+      background: white;
+      border-radius: 22px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .ikon {
+      font-size: 52px;
+    }
+
+    .kotak-kode h1 {
+      margin-bottom: 10px;
+      color: #32105f;
+    }
+
+    .keterangan {
+      color: #666;
+      line-height: 1.6;
+    }
+
+    input {
+      width: 100%;
+      margin-top: 10px;
+      padding: 14px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 16px;
+      outline: none;
+    }
+
+    input:focus {
+      border-color: #7224c9;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 16px;
+      padding: 14px;
+      border: none;
+      border-radius: 10px;
+      color: white;
+      background: #7224c9;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #521491;
+    }
+
+    #pesanSalah {
+      min-height: 22px;
+      margin-top: 14px;
+      color: red;
+      font-weight: bold;
+    }
+
+
+    /* =========================
+       HALAMAN TUGASKU
+    ========================= */
+
+    #halamanFoto {
+      display: none;
+      min-height: 100vh;
+      padding: 20px;
+      background: linear-gradient(135deg, #f5efff, #ffffff);
+    }
+
+    .isi-tugas {
+      width: 100%;
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .judul {
+      margin-bottom: 8px;
+      text-align: center;
+      color: #32105f;
+    }
+
+    .subjudul {
+      margin-top: 0;
+      margin-bottom: 18px;
+      text-align: center;
+      color: #666;
+    }
+
+
+    /* =========================
+       JAM WIB
+    ========================= */
+
+    .jam {
+      margin-bottom: 20px;
+      padding: 12px;
+      text-align: center;
+      color: white;
+      background: #32105f;
+      border-radius: 12px;
+      font-weight: bold;
+    }
+
+
+    /* =========================
+       KARTU GAMBAR
+    ========================= */
+
+    .kartu-gambar {
+      margin-bottom: 20px;
+      padding: 15px;
+      background: white;
+      border-radius: 18px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+    }
+
+    .kartu-gambar h2 {
+      margin-top: 0;
+      color: #32105f;
+      font-size: 20px;
+    }
+
+    .kartu-gambar img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+    }
+
+
+    /* =========================
+       PESAN JIKA GAMBAR TIDAK ADA
+    ========================= */
+
+    .gambar-error {
+      padding: 20px;
+      text-align: center;
+      color: red;
+      background: #ffecec;
+      border-radius: 10px;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    .footer {
+      padding: 20px 0;
+      text-align: center;
+      color: #777;
+    }
+
+
+    /* =========================
+       TAMPILAN HP
+    ========================= */
+
+    @media (max-width: 600px) {
+
+      #halamanKode {
+        padding: 15px;
+      }
+
+      #halamanFoto {
+        padding: 15px;
+      }
+
+      .kotak-kode {
+        padding: 30px 20px;
+      }
+
+      .judul {
+        font-size: 27px;
+      }
+
+      .kartu-gambar h2 {
+        font-size: 18px;
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+  <!-- =========================
+       HALAMAN KODE RAHASIA
+  ========================= -->
+
+  <section id="halamanKode">
+
+    <div class="kotak-kode">
+
+      <div class="ikon">🔐</div>
+
+      <h1>Selamat Datang</h1>
+
+      <p class="keterangan">
+        Masukkan kode rahasia untuk membuka
+        halaman Tugasku INFTIK.
+      </p>
+
+      <input
+        type="password"
+        id="kodeRahasia"
+        placeholder="Masukkan kode rahasia"
+      >
+
+      <button onclick="bukaHalaman()">
+        Buka Halaman
+      </button>
+
+      <div id="pesanSalah"></div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       HALAMAN TUGASKU
+  ========================= -->
+
+  <section id="halamanFoto">
+
+    <div class="isi-tugas">
+
+      <h1 class="judul">
+        Tugasku INFTIK
+      </h1>
+
+      <p class="subjudul">
+        Kumpulan tugas dan data profil
+      </p>
+
+
+      <!-- JAM -->
+
+      <div class="jam" id="jamWIB">
+        WIB: Memuat waktu...
+      </div>
+
+
+      <!-- =========================
+           SAMPUL
+      ========================= -->
+
+      <div class="kartu-gambar">
+
+        <h2>Sampul INFTIK</h2>
+
+        <img
+          src="images/sampul-inftik.jpg"
+          alt="Sampul INFTIK"
+          onerror="tampilkanError(this, 'Sampul INFTIK')"
+        >
+
+      </div>
+
+
+      <!-- =========================
+           DATA PROFIL
+      ========================= -->
+
+      <div class="kartu-gambar">
+
+        <h2>Data Profil Siswa</h2>
+
+        <img
+          src="images/data-profil.jpg"
+          alt="Data Profil Siswa"
+          onerror="tampilkanError(this, 'Data Profil Siswa')"
+        >
+
+      </div>
+
+
+      <!-- =========================
+           RIWAYAT PENDIDIKAN
+      ========================= -->
+
+      <div class="kartu-gambar">
+
+        <h2>Riwayat Pendidikan</h2>
+
+        <img
+          src="images/riwayat-pendidikan.jpg"
+          alt="Riwayat Pendidikan"
+          onerror="tampilkanError(this, 'Riwayat Pendidikan')"
+        >
+
+      </div>
+
+
+      <!-- =========================
+           RIWAYAT PRESTASI
+      ========================= -->
+
+      <div class="kartu-gambar">
+
+        <h2>Riwayat Prestasi</h2>
+
+        <img
+          src="images/riwayat-prestasi.jpg"
+          alt="Riwayat Prestasi"
+          onerror="tampilkanError(this, 'Riwayat Prestasi')"
+        >
+
+      </div>
+
+
+      <!-- =========================
+           HOBI DAN MINAT
+      ========================= -->
+
+      <div class="kartu-gambar">
+
+        <h2>Hobi dan Minat</h2>
+
+        <img
+          src="images/hobi-minat.jpg"
+          alt="Hobi dan Minat"
+          onerror="tampilkanError(this, 'Hobi dan Minat')"
+        >
+
+      </div>
+
+
+      <div class="footer">
+        © Tugasku INFTIK
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================= -->
+
+  <script>
+
+    /* =========================
+       MEMBUKA HALAMAN
+    ========================= */
+
+    function bukaHalaman() {
+
+      const kode =
+        document.getElementById("kodeRahasia").value.trim();
+
+      const halamanKode =
+        document.getElementById("halamanKode");
+
+      const halamanFoto =
+        document.getElementById("halamanFoto");
+
+      const pesanSalah =
+        document.getElementById("pesanSalah");
+
+
+      /*
+        KODE RAHASIA:
+        SuaraKuTugas1
+      */
+
+      if (kode === "SuaraKuTugas1") {
+
+        halamanKode.style.display = "none";
+
+        halamanFoto.style.display = "block";
+
+        pesanSalah.textContent = "";
+
+        window.scrollTo(0, 0);
+
+      } else {
+
+        pesanSalah.textContent =
+          "❌ Kode rahasia salah!";
+
+      }
+
+    }
+
+
+    /* =========================
+       BISA TEKAN ENTER
+    ========================= */
+
+    document
+      .getElementById("kodeRahasia")
+      .addEventListener("keydown", function(event) {
+
+        if (event.key === "Enter") {
+          bukaHalaman();
+        }
+
+      });
+
+
+    /* =========================
+       JAM WIB
+    ========================= */
+
+    function tampilkanJam() {
+
+      const sekarang = new Date();
+
+      const waktuWIB =
+        new Intl.DateTimeFormat(
+          "id-ID",
+          {
+            timeZone: "Asia/Jakarta",
+            weekday: "long",
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+            hour: "2-digit",
+            minute: "2-digit",
+            second: "2-digit"
+          }
+        ).format(sekarang);
+
+      document.getElementById("jamWIB").textContent =
+        "WIB: " + waktuWIB;
+
+    }
+
+    tampilkanJam();
+
+    setInterval(tampilkanJam, 1000);
+
+
+    /* =========================
+       JIKA GAMBAR TIDAK DITEMUKAN
+    ========================= */
+
+    function tampilkanError(gambar, nama) {
+
+      const pesan =
+        document.createElement("div");
+
+      pesan.className = "gambar-error";
+
+      pesan.textContent =
+        "Gambar " + nama +
+        " tidak ditemukan. " +
+        "Pastikan file berada di folder images " +
+        "dan nama file sudah benar.";
+
+      gambar.replaceWith(pesan);
+
+    }
+
+  </script>
+
+</body>
+        </html>
