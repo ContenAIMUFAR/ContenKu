@@ -3,11 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Halaman Rahasia</title>
+  <title>Tugasku INFTIK ku</title>
 
   <style>
     * {
       box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
@@ -44,18 +48,12 @@
       margin-bottom: 12px;
     }
 
-    h1,
-    h2 {
-      margin-top: 0;
-    }
-
     .keterangan {
       color: #666;
       line-height: 1.6;
     }
 
-    input[type="password"],
-    input[type="file"] {
+    input[type="password"] {
       width: 100%;
       margin-top: 10px;
       padding: 14px;
@@ -92,62 +90,85 @@
       display: none;
       flex-direction: column;
       justify-content: flex-start;
-      background: white;
+      align-items: center;
+      background: linear-gradient(135deg, #f5f0ff, #ffffff);
       text-align: center;
+      padding-top: 25px;
+      overflow-y: auto;
     }
 
     .isi-foto {
       width: 100%;
-      max-width: 900px;
+      max-width: 950px;
     }
 
-    .isi-foto h2 {
-      margin-bottom: 8px;
+    .judul-tugas {
+      margin: 0 0 12px;
+      padding: 20px 15px;
+      color: white;
+      background: linear-gradient(135deg, #32105f, #a044ff);
+      border-radius: 16px;
+      font-size: 32px;
     }
 
-    .isi-foto p {
+    .jam-wib {
+      display: inline-block;
+      margin-bottom: 20px;
+      padding: 12px 22px;
+      color: white;
+      background: #222;
+      border-radius: 30px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .keterangan-halaman {
       color: #666;
+      line-height: 1.6;
     }
 
-    .tempat-gambar {
+    .daftar-gambar {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 250px;
-      margin-top: 20px;
-      padding: 10px;
+      flex-direction: column;
+      gap: 25px;
+      width: 100%;
+    }
+
+    .kartu-gambar {
+      width: 100%;
+      padding: 14px;
       background: white;
       border: 1px solid #ddd;
-      border-radius: 14px;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      border-radius: 16px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
     }
 
-    #gambarFoto {
-      display: none;
-      max-width: 100%;
-      width: auto;
+    .kartu-gambar h2 {
+      margin: 5px 0 14px;
+      color: #32105f;
+      font-size: 24px;
+    }
+
+    .gambar-tugas {
+      display: block;
+      width: 100%;
       height: auto;
-      max-height: 75vh;
+      max-height: 850px;
       object-fit: contain;
-      border-radius: 8px;
+      border-radius: 10px;
     }
 
-    #pesanGambar {
+    .pesan-gambar {
+      display: none;
+      padding: 30px 10px;
       color: #777;
       line-height: 1.6;
     }
 
     .tombol-kunci {
       width: auto;
-      min-width: 170px;
-      margin: 22px auto 0;
-    }
-
-    .label-file {
-      display: block;
-      margin-top: 22px;
-      font-weight: bold;
-      color: #444;
+      min-width: 180px;
+      margin: 25px auto 10px;
     }
 
     @media (max-width: 600px) {
@@ -159,20 +180,27 @@
         padding: 28px 20px;
       }
 
-      .tempat-gambar {
-        min-height: 220px;
-        padding: 6px;
+      .judul-tugas {
+        font-size: 25px;
       }
 
-      #gambarFoto {
-        max-height: 70vh;
+      .jam-wib {
+        font-size: 17px;
+      }
+
+      .kartu-gambar {
+        padding: 8px;
+      }
+
+      .kartu-gambar h2 {
+        font-size: 20px;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- HALAMAN 1: KODE RAHASIA -->
+  <!-- HALAMAN 1 -->
   <section id="halamanKode" class="halaman">
     <div class="kotak-kode">
       <div class="ikon">🔐</div>
@@ -180,57 +208,83 @@
       <h1>Selamat Datang</h1>
 
       <p class="keterangan">
-        Silakan masukkan kode rahasia untuk membuka halaman berikutnya.
+        Silakan masukkan password untuk membuka tugas.
       </p>
 
       <form id="formKode">
-        <label for="kodeRahasia">Masukkan kode rahasia</label>
+        <label for="kodeRahasia">Masukkan password</label>
 
         <input
           id="kodeRahasia"
           type="password"
-          placeholder="Masukkan kode rahasia"
+          placeholder="Masukkan password"
           autocomplete="off"
           required
         >
 
-        <button type="submit">🔓 Buka</button>
+        <button type="submit">🔓 Buka Tugas</button>
 
         <div id="pesanSalah"></div>
       </form>
     </div>
   </section>
 
-  <!-- HALAMAN 2: FOTO -->
+
+  <!-- HALAMAN 2 -->
   <section id="halamanFoto" class="halaman">
     <div class="isi-foto">
-      <h2>Halaman Foto</h2>
 
-      <p>Halaman rahasia berhasil dibuka.</p>
+      <h1 class="judul-tugas">Tugasku INFTIK ku</h1>
 
-      <label class="label-file" for="pilihGambar">
-        Pilih gambar yang ingin ditampilkan:
-      </label>
+      <div class="jam-wib" id="jamWib">
+        WIB: 00:00:00
+      </div>
 
-      <input
-        id="pilihGambar"
-        type="file"
-        accept="image/*"
-      >
+      <p class="keterangan-halaman">
+        Selamat datang di halaman tugas dan profil saya.
+      </p>
 
-      <div class="tempat-gambar">
-        <img id="gambarFoto" alt="Foto halaman rahasia">
+      <div class="daftar-gambar">
 
-        <div id="pesanGambar">
-          Silakan pilih gambar Anda terlebih dahulu.
+        <div class="kartu-gambar">
+          <h2>Profil INFTIK</h2>
+          <img class="gambar-tugas" src="gambar-inftik.jpg" alt="Profil INFTIK">
+          <div class="pesan-gambar">Gambar Profil INFTIK tidak ditemukan.</div>
         </div>
+
+        <div class="kartu-gambar">
+          <h2>Data Profil Siswa</h2>
+          <img class="gambar-tugas" src="data-profil.jpg" alt="Data Profil Siswa">
+          <div class="pesan-gambar">Gambar Data Profil Siswa tidak ditemukan.</div>
+        </div>
+
+        <div class="kartu-gambar">
+          <h2>Riwayat Pendidikan</h2>
+          <img class="gambar-tugas" src="riwayat-pendidikan.jpg" alt="Riwayat Pendidikan">
+          <div class="pesan-gambar">Gambar Riwayat Pendidikan tidak ditemukan.</div>
+        </div>
+
+        <div class="kartu-gambar">
+          <h2>Riwayat Prestasi</h2>
+          <img class="gambar-tugas" src="riwayat-prestasi.jpg" alt="Riwayat Prestasi">
+          <div class="pesan-gambar">Gambar Riwayat Prestasi tidak ditemukan.</div>
+        </div>
+
+        <div class="kartu-gambar">
+          <h2>Hobi dan Minat</h2>
+          <img class="gambar-tugas" src="hobi-minat.jpg" alt="Hobi dan Minat">
+          <div class="pesan-gambar">Gambar Hobi dan Minat tidak ditemukan.</div>
+        </div>
+
       </div>
 
       <button id="tombolKunci" class="tombol-kunci" type="button">
         🔒 Kunci Lagi
       </button>
+
     </div>
   </section>
+
 
   <script>
     const halamanKode = document.getElementById("halamanKode");
@@ -239,49 +293,52 @@
     const kodeRahasia = document.getElementById("kodeRahasia");
     const pesanSalah = document.getElementById("pesanSalah");
     const tombolKunci = document.getElementById("tombolKunci");
+    const jamWib = document.getElementById("jamWib");
 
-    const pilihGambar = document.getElementById("pilihGambar");
-    const gambarFoto = document.getElementById("gambarFoto");
-    const pesanGambar = document.getElementById("pesanGambar");
-
-    // Kode rahasia
-    const kodeBenar = "aku";
+    const kodeBenar = "SuaraKuTugas1";
 
     formKode.addEventListener("submit", function(event) {
       event.preventDefault();
 
-      if (kodeRahasia.value.trim() === kodeBenar) {
+      if (kodeRahasia.value === kodeBenar) {
         halamanKode.style.display = "none";
         halamanFoto.style.display = "flex";
         pesanSalah.textContent = "";
+        perbaruiJamWIB();
       } else {
-        pesanSalah.textContent = "Kode rahasia salah. Silakan coba lagi.";
+        pesanSalah.textContent = "Password salah. Silakan coba lagi.";
         kodeRahasia.select();
       }
     });
 
-    // Menampilkan gambar yang dipilih pada halaman 2
-    pilihGambar.addEventListener("change", function() {
-      const file = pilihGambar.files[0];
+    function perbaruiJamWIB() {
+      const waktuWIB = new Intl.DateTimeFormat("id-ID", {
+        timeZone: "Asia/Jakarta",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+        hour12: false
+      }).format(new Date());
 
-      if (!file) {
-        return;
-      }
+      jamWib.textContent = "WIB: " + waktuWIB;
+    }
 
-      const alamatGambar = URL.createObjectURL(file);
+    setInterval(perbaruiJamWIB, 1000);
 
-      gambarFoto.src = alamatGambar;
-      gambarFoto.style.display = "block";
-      pesanGambar.style.display = "none";
+    document.querySelectorAll(".gambar-tugas").forEach(function(gambar) {
+      gambar.addEventListener("error", function() {
+        gambar.style.display = "none";
+        gambar.nextElementSibling.style.display = "block";
+      });
     });
 
-    // Kembali ke halaman kode
     tombolKunci.addEventListener("click", function() {
       halamanFoto.style.display = "none";
       halamanKode.style.display = "flex";
       kodeRahasia.value = "";
       pesanSalah.textContent = "";
       kodeRahasia.focus();
+      window.scrollTo(0, 0);
     });
   </script>
 
